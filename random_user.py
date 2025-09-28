@@ -1,16 +1,16 @@
 import random
-import string
 
+class Random:
+    @staticmethod
+    def generate_random_valid_email():
+        valid_email = f'Qwerty{random.randint(100,999)}@yandex.ru'
+        return valid_email
 
-def generate_random_valid_email():
-    username = ''.join(random.choices(string.ascii_lowercase + string.digits, k=8))
-    domain = random.choice(['gmail.com', 'yahoo.com', 'test.com'])
-    return f"{username}@{domain}"
+    @staticmethod
+    def valid_password():
+        valid_password = f'Qwerty{random.randint(100,999)}'
+        return valid_password
 
-def generate_invalid_unique_email(length=2):
-    return ''.join(random.choices(string.ascii_lowercase, k=length))
-
-def generate_random_password(length=6):
-    characters = string.ascii_letters + string.digits + string.punctuation
-    password = ''.join(random.choices(characters, k=length))
-    return password
+    def generate_random_invalid_email(length=8):
+        invalid_email= f'Qwe{random.randint(100,999)}yandex.ru'
+        return invalid_email
